@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CherryMusic</title>
+<link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+<div class="container">
+<!-- Botão da lupa no canto superior direito -->
+<button class="search-btn" id="searchBtn" aria-label="Buscar">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+<path d="M10 2a8 8 0 0 1 6.32 12.9l5.39 5.38-1.42 1.42-5.38-5.39A8 8 0 1 1 10 2zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12z"/>
+</svg>
+</button>
+ 
+      <!-- Menu lateral (sidebar) -->
+<div id="menu" class="sidebar">
+<div class="server-input">
+<input
+
+            id="serverUrl"
+
+            type="url"
+
+            placeholder="Digite a URL do servidor falsk"
+
+            autocomplete="off"
+
+            spellcheck="false"
+
+          />
+<button id="connectBtn" type="button">conectar</button>
+
+  <li>
+    <div id="history-container">
+          <h2>Histórico</h2>
+          <ul id="song-history"></ul>
+    </div>
+  </li>
+</div>
+</div>
+ 
+      <!-- Conteúdo principal -->
+<main class="main-content">
+<!-- Player à esquerda -->
+<section class="player-section">
+<div class="album-cover">
+<img id="albumArt" src="download (41).jfif" alt="Capa do álbum" />
+</div>
+<div class="song-info">
+<h2 id="songTitle">nenhuma musica tocando</h2>
+<p id="artistName">nenhum artista encontrado</p>
+</div>
+<div class="progress-bar">
+<div class="progress-fill" id="progressFill"></div>
+</div>
+<div class="player-controls">
+<button class="control-btn" id="prevBtn" aria-label="Anterior">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+<path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+</svg>
+</button>
+<button class="control-btn play-btn" id="playBtn" aria-label="Tocar/Pausar">
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+<path d="M8 5v14l11-7z"/>
+</svg>
+</button>
+<button class="control-btn" id="nextBtn" aria-label="Próxima">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+<path d="M16 18h2V6h-2zm-11-7l8.5-6v12z"/>
+</svg>
+</button>
+</div>
+<audio id="audio"></audio>
+</section>
+ 
+        <!-- Divisor vertical -->
+<div class="divider"></div>
+ 
+        <!-- Lista de músicas à direita -->
+<section class="playlist-section">
+<h3 class="playlist-title">Lista Musicas</h3>
+<ul id="songList" class="song-list">
+<!-- As músicas serão inseridas aqui via JavaScript -->
+</ul>
+</section>
+</main>
+ 
+      <!-- Status de conexão -->
+<div id="status" class="status-message"></div>
+</div>
+ 
+    <script src="app.js"></script>
+</body>
+</html>
+
+ 
